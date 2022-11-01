@@ -1,0 +1,210 @@
+//setting liberal preference
+        prefDescriptor = "liberal";
+        Type pType = new Type(DMF.IMPORTANT, VV.TRYTOSAVE, VV.MUSTSAVE);
+        Age pAge = new Age(DMF.VERYIMPORTANT, VV.MUSTSAVE, VV.TRYTOSAVE, VV.CANKILL, VV.INDIFFERENT);
+        Gender pGender = new Gender(DMF.VERYIMPORTANT, VV.INDIFFERENT, VV.MUSTSAVE);
+        Pregnancy pPregnancy = new Pregnancy(DMF.VERYIMPORTANT, VV.TRYTOSAVE, VV.MUSTSAVE);
+        SocialStatus pSocialStatus = new SocialStatus(DMF.NOTIMPORTANT, VV.INDIFFERENT, VV.MUSTSAVE, VV.TRYTOSAVE);
+        Lawfulness pLawfulness = new Lawfulness(DMF.SOMEWHATIMPORTANT, VV.MUSTSAVE, VV.TRYTOSAVE, VV.INDIFFERENT);
+        Health pHealth = new Health(DMF.SOMEWHATIMPORTANT, VV.TRYTOSAVE, VV.MUSTSAVE, VV.INDIFFERENT);
+
+//setting conservative preference
+        prefDescriptor = "conservative";
+        Type pType = new Type(DMF.VERYIMPORTANT, VV.MUSTSAVE, VV.TRYTOSAVE);
+        Age pAge = new Age(DMF.SOMEWHATIMPORTANT, VV.TRYTOSAVE, VV.INDIFFERENT, VV.MUSTSAVE, VV.CANKILL);
+        Gender pGender = new Gender(DMF.IMPORTANT, VV.MUSTSAVE, VV.TRYTOSAVE);
+        Pregnancy pPregnancy = new Pregnancy(DMF.NOTIMPORTANT, VV.INDIFFERENT, VV.TRYTOSAVE);
+        SocialStatus pSocialStatus = new SocialStatus(DMF.SOMEWHATIMPORTANT, VV.TRYTOSAVE, VV.MUSTSAVE, VV.CANKILL);
+        Lawfulness pLawfulness = new Lawfulness(DMF.VERYIMPORTANT, VV.MUSTSAVE, VV.INDIFFERENT, VV.TRYTOSAVE);
+        Health pHealth = new Health(DMF.SOMEWHATIMPORTANT, VV.TRYTOSAVE, VV.MUSTSAVE, VV.INDIFFERENT);
+
+        preferences = new Preference(pType, pGender, pAge, pPregnancy, pLawfulness, pSocialStatus, pHealth);
+
+//setting scenario 1: swerve group has 2 elderly men, 1 normal man, 1 obese man
+//                    straight group has 1 girl, 1 normal woman, and 2 female athletes (#10)
+
+        scenarioDescriptor = "swerve group has 2 elderly men, 1 normal man, 1 obese man; straight group has 1 girl, 1 normal woman, and 2 female athletes (#10)";
+        People swerve1 = new People(preferences, "Human", "Elderly", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People swerve2 = new People(preferences, "Human", "Elderly", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People swerve3 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "average");
+        People swerve4 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+        People straight1 = new People(preferences, "Human", "Child", "Female", "notapplicable", "notapplicable", "unknown", "average");
+        People straight2 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "unknown", "average");
+        People straight3 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "unknown", "athlete");
+        People straight4 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "unknown", "athlete");
+
+//setting scenario 2: The swerve group has 1 male athlete, 1 mistfit, and 1 boy, all law breaking.
+        // The straight group has 1 obese woman, 1 female professional, abd 1 baby, all law abiding. (#17)
+
+        scenarioDescriptor = "swerve group has 1 male athlete, 1 mistfit, and 1 boy, all law breaking;straight group has 1 obese woman, 1 female professional, abd 1 baby, all law abiding (#17)";
+        People swerve1 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "athlete");
+        People swerve2 = new People(preferences,"Human", "Adult", "unknown", "unknown", "failure", "breaking", "unknown");
+        People swerve3 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "breaking", "unknown");
+        People straight1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "abiding", "obese");
+        People straight2 = new People(preferences,"Human", "Adult", "Female", "unknown", "professional", "abiding", "unknown");
+        People straight3 = new People(preferences,"Human", "Baby", "Unknown", "notapplicable", "notapplicable", "abiding", "unknown");
+
+//scenario 3:
+        scenarioDescriptor = "straight group has 2 women, 1 large man; swerve group has 2 female athletes, 1 male athlete (#1)";
+        People straight1 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "unknown", "average");
+        People straight2 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "unknown", "average");
+        People straight3 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+        People swerve1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "athlete");
+        People swerve2 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "athlete");
+        People swerve3 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "athlete");
+
+
+//scenario 4:
+        scenarioDescriptor = "straight group has 2 female doctors, 1 man, 1 pregnant woman; swerve group has 1 elderly woman, 1 female doctor, 1 large woman, 1 female athlete, all law abiding (#2)";
+        People straight1 = new People(preferences, "Human", "Adult", "Female", "unknown", "professional", "unknown", "unknown");
+        People straight2 = new People(preferences, "Human", "Adult", "Female", "unknown", "professional", "unknown", "unknown");
+        People straight3 = new People(preferences, "Human", "Adult", "Female", "pregnant", "unknown", "unknown", "average");
+        People straight4 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "average");
+        People swerve1 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "abiding", "unknown");
+        People swerve2 = new People(preferences, "Human", "Adult", "Female", "unknown", "professional", "abiding", "unknown");
+        People swerve3 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "abiding", "obese");
+        People swerve4 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "abiding", "athlete");
+
+//scenario 5:
+        scenarioDescriptor = "straight group has 1 male athlete, 1 obese man, all law breaking; swerve group has 1 female athlete, 1 large woman";
+        People straight1 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "athlete");
+        People straight2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "obese");
+        People swerve1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "athlete");
+        People swerve2 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "obese");
+
+//scenario 6:
+        scenarioDescriptor = "straight group has 2 male athletes, 1 woman, all law abiding; swerve group has 2 men, 1 large woman, all law breaking";
+        People straight1 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "abiding", "athlete");
+        People straight2 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "abiding", "athlete");
+        People straight3 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "abiding", "average");
+        People swerve1 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "average");
+        People swerve2 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "average");;
+        People swerve3 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "breaking", "obese");
+
+//scenario 7
+        scenarioDescriptor = "straight group has 1 girl, 1 baby, all law breaking; swerve group has 1 girl, 1 baby, 1 large man";
+        People straight1 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "breaking", "unknown");
+        People straight2 = new People(preferences,"Human", "Baby", "Unknown", "notapplicable", "notapplicable", "breaking", "unknown");
+        People swerve1 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Baby", "Unknown", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve3 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+
+//scenario 8
+        scenarioDescriptor = "straight group has 2 dogs, all law breaking; swerve group has 1 pregnant woman, 1 homeless person, all law abiding";
+        People straight1 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "breaking", "unknown");
+        People straight2 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "breaking", "unknown");
+        People swerve1 = new People(preferences, "Human", "Adult", "Female", "pregnant", "unknown", "abiding", "average");
+        People swerve2 = new People(preferences,"Human", "Adult", "Unknown", "unknown", "failure", "abiding", "unknown");
+
+//scenario 9
+        scenarioDescriptor = "straight group has 1 criminal, 1 elderly woman, all law abiding; swerve group has 1 criminal, 1 elderly woman, 1 pregnant woman, 1 boy, 1 baby, all law breaking";
+        People straight1 = new People(preferences,"Human", "Adult", "Unknown", "unknown", "failure", "abiding", "unknown");
+        People straight2 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "abiding", "unknown");
+        People swerve1 = new People(preferences,"Human", "Adult", "Unknown", "unknown", "failure", "breaking", "unknown");
+        People swerve2 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "breaking", "unknown");
+        People swerve3 = new People(preferences, "Human", "Adult", "Female", "pregnant", "unknown", "breaking", "average");
+        People swerve4 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "breaking", "unknown");
+        People swerve5 = new People(preferences,"Human", "Baby", "Unknown", "notapplicable", "notapplicable", "breaking", "unknown");
+
+//scenario 10
+        scenarioDescriptor = "straight group has 2 male executives, swerve group has 1 homeless person, 1 man";
+        People straight1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+        People straight2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+        People swerve1 = new People(preferences,"Human", "Adult", "Unknown", "unknown", "failure", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "average", "unknown", "unknown");
+
+//scenario 11
+        scenarioDescriptor = "straight group has 1 elderly man, 1 elderly woman, 1 man, all law breaking; swerve group has 1 man, 1 girl, 1 boy, all law abiding";
+        People straight1 = new People(preferences,"Human", "Elderly", "Male", "notapplicable", "unknown", "breaking", "unknown");
+        People straight2 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "breaking", "unknown");
+        People straight3 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "unknown");
+        People swerve1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "abiding", "unknown");
+        People swerve2 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "abiding", "unknown");
+        People swerve3 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "abiding", "unknown");
+
+//scenario 12
+        scenarioDescriptor = "straight group has 2 cats, 1 dog; swerve group has 2 male doctors, 1 female executive";
+        People straight1 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People straight2 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People straight3 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People swerve1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+        People swerve3 = new People(preferences,"Human", "Adult", "Female", "unknown", "professional", "unknown", "unknown");
+
+//scenario 13
+        scenarioDescriptor = "straight group has 2 elderly men, 1 elderly woman; swerve group has 1 boy, 1 woman, 1 man";
+        People straight1 = new People(preferences,"Human", "Elderly", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People straight2 = new People(preferences,"Human", "Elderly", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People straight3 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "unknown", "unknown");
+        People swerve1 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve3 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "unknown");
+
+//scenario 14
+        scenarioDescriptor = "straight group has 1 woman, all law abiding; swerve group has 1 homeless person, all law breaking";
+        People straight1 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "abiding", "average");
+        People swerve1 = new People(preferences, "Human", "Adult", "Unknown", "unknown", "failure", "breaking", "average");
+
+//scenario 15
+        scenarioDescriptor = "straight group has 2 girls, 1 female doctor, 1 large woman, 1 elderly woman; swerve group has 2 boys, 1 male doctor, 1 large man, 1 elderly man, all law abiding";
+        People straight1 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "unknown", "unknown");
+        People straight2 = new People(preferences,"Human", "Child", "Female", "notapplicable", "notapplicable", "unknown", "unknown");
+        People straight3 = new People(preferences, "Human", "Adult", "Female", "unknown", "professional", "unknown", "unknown");
+        People straight4 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "obese");
+        People straight5 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "unknown", "unknown");
+        People swerve1 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Child", "Male", "notapplicable", "notapplicable", "unknown", "unknown");
+        People swerve3 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+        People swerve4 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+        People swerve5 = new People(preferences,"Human", "Elderly", "Male", "notapplicable", "unknown", "unknown", "unknown");
+
+ //scenario 16
+        scenarioDescriptor = "straight group has 1 large woman; swerve group has 1 woman, all law breaking";
+        People straight1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "obese");
+        People swerve1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "breaking", "average");
+
+//scenario 17
+        scenarioDescriptor = "straight group has 1 female executive, 1 woman, all law breaking; swerve group has 1 male executive, 1 man";
+        People straight1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "breaking", "unknown");
+        People straight2 = new People(preferences,"Human", "Adult", "Female", "unknown", "professional", "breaking", "unknown");
+        People swerve1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "professional", "unknown", "unknown");
+
+//scenario 18
+        scenarioDescriptor = "straight group has 1 man, 1 pregnant woman, 2 male athletes; swerve group has 1 elderly woman, 1 large man, 1 male athlete, 1 large woman";
+        People straight1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "unknown");
+        People straight2 = new People(preferences,"Human", "Adult", "Female", "pregnant", "unknown", "unknown", "unknown");
+        People straight3 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "athlete");
+        People straight4 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "athlete");
+        People swerve1 = new People(preferences,"Human", "Elderly", "Female", "unknown", "unknown", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+        People swerve3 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "athlete");
+        People swerve4 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "obese");
+
+//scenario 19
+scenarioDescriptor = "straight group has 1 homeless person, 1 female athlete, 1 elderly man, 1 male athlete, 1 female exec, all law breaking; swerve group has 2 cats, 3 dogs";
+        People straight1 = new People(preferences,"Human", "Adult", "Unknown", "unknown", "failure", "breaking", "unknown");
+        People straight2 = new People(preferences, "Human", "Adult", "Female", "unknown", "unknown", "breaking", "athlete");
+        People straight3 = new People(preferences,"Human", "Elderly", "Male", "notapplicable", "unknown", "breaking", "unknown");
+        People straight4 = new People(preferences, "Human", "Adult", "Male", "notapplicable", "unknown", "breaking", "athlete");
+        People straight5 = new People(preferences, "Human", "Adult", "Female", "unknown", "professional", "breaking", "unknown");
+        People swerve1 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People swerve2 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People swerve3 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People swerve4 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+        People swerve5 = new People(preferences,"Animal", "notapplicable", "unknown", "unknown", "notapplicable", "unknown", "unknown");
+
+
+//scenario20
+
+ scenarioDescriptor = "straight group has 1 large woman; swerve group has 1 large man";
+        People straight1 = new People(preferences,"Human", "Adult", "Female", "unknown", "unknown", "unknown", "obese");
+        People swerve1 = new People(preferences,"Human", "Adult", "Male", "notapplicable", "unknown", "unknown", "obese");
+
+
+
+
+
+
+
+
